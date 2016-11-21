@@ -4,10 +4,9 @@ FROM drush/drush:8-php5
 ADD ["composer.json", "entrypoint.sh", "/var/work/"]
 WORKDIR /var/work
 
-# Install and initialize Behat, create folder for artifacts.
+# Install and initialize Behat.
 RUN composer install \
-    && bin/behat --init \
-    && mkdir -p artifacts
+    && bin/behat --init
 
 ENV PATH $PATH:/var/work/bin/
 
