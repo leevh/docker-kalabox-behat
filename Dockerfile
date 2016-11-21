@@ -6,7 +6,6 @@ WORKDIR /srv
 
 # Install and initialize Behat, create folder for artifacts.
 RUN composer install \
-    && bin/behat --init \
-    && mkdir -p artifacts
+    && bin/behat --init
 
 ENTRYPOINT ["/srv/entrypoint.sh"]
